@@ -28,13 +28,13 @@ function API() {
   return (
     <div>
       <div className='divbtn'>
-          <button onClick={() => {btn('')}}>ALL</button>
-          <button onClick={() => {btn('category=business&')}}>business</button>
-          <button onClick={() => {btn('category=entertainment&')}}>entertainment</button>
-          <button onClick={() => {btn('category=health&')}}>health</button>
-          <button onClick={() => {btn('category=science&')}}>science</button>
-          <button onClick={() => {btn('category=sports&')}}>sports</button>
-          <button onClick={() => {btn('category=technology&')}}>technology</button>
+          <button onClick={() => {btn('')}}>Toutes les catégories</button>
+          <button onClick={() => {btn('category=business&')}}>Actualités gouvernementale</button>
+          <button onClick={() => {btn('category=entertainment&')}}>Divertissements</button>
+          <button onClick={() => {btn('category=health&')}}>Santé</button>
+          <button onClick={() => {btn('category=science&')}}>Science</button>
+          <button onClick={() => {btn('category=sports&')}}>Sports</button>
+          <button onClick={() => {btn('category=technology&')}}>Technologie</button>
       </div>
       <div className='Main'>
         {product && product.map((a) => 
