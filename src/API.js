@@ -11,6 +11,9 @@ import axios from 'axios'
 function API() {
   const [product, setProduct] = useState()
   const [url, seturl] = useState(`https://newsapi.org/v2/top-headlines?country=fr&apiKey=f935ef97b74e4d9db8cd9f7425d7663d`)
+  const [search, setsearch] = useState("")
+
+
 
   function btn(cat){
     seturl(`https://newsapi.org/v2/top-headlines?country=fr&${cat}apiKey=f935ef97b74e4d9db8cd9f7425d7663d`)
@@ -25,6 +28,11 @@ function API() {
       })
   }, [url])
   
+  const handleSearch = (e) => {
+    let value = e.target.value;
+    setsearch(value)
+  };
+
   return (
     <div>
       <div className='divbtn'>
@@ -36,8 +44,19 @@ function API() {
           <button onClick={() => {btn('category=sports&')}}>sports</button>
           <button onClick={() => {btn('category=technology&')}}>technology</button>
       </div>
+      <div className='barre'>
+        <input
+          type="text"
+          name="searchBar"
+          id="searchBar"
+          placeholder="Recherche"
+          onChange={handleSearch}
+        />
+      </div>
       <div className='Main'>
-        {product && product.map((a) => 
+        {product && product.filter((a)=>{
+          return a.source.name.toLowerCase().includes(search.toLowerCase())
+        }).map((a) => 
         
           <div className='Article' key={a.publishedAt}>
           <a href={a.url}>
