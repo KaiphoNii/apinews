@@ -1,8 +1,16 @@
-import Accueil from '../Components/Accueil'
+import API from './API'
+import Accueil from './Accueil'
+import Footer from './Footer'
+
+
+
 function App() {
+
   return (
-    <div className="App">
+    <div>
       <Accueil />
+      <API />
+      <Footer />
     </div>
   );
 }
