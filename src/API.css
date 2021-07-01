@@ -44,6 +44,18 @@ p{
     font-size: 1em;
 }
 
+.divbtn{
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 5px black solid;
+    padding-bottom: 1em;
+}
+.divbtn button{
+    background-color: rgb(129, 203, 253);
+    padding: 10px;
+    border-radius: 5px;
+}
+
 
 @media screen and (min-width:728px){
 
